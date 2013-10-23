@@ -21,15 +21,20 @@
 # lines, full and maguro, hence its name.
 #
 
+# Get the long list of APNs
+PRODUCT_COPY_FILES := vendor/omni/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from m7att device
 $(call inherit-product, device/htc/m7att/device.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_m7att
+PRODUCT_NAME := omni_m7att
 PRODUCT_DEVICE := m7att
 PRODUCT_BRAND := htc
 PRODUCT_MANUFACTURER := htc
