@@ -17,9 +17,6 @@
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/m7att/m7att-vendor.mk)
 
-# overlays
-DEVICE_PACKAGE_OVERLAYS += device/htc/m7att/overlay
-
 # common overlays
 DEVICE_PACKAGE_OVERLAYS += device/htc/m7-common/overlay-gsm
 
